@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Shelf{% endblock %}
+
+{% block css_file %}
+    <link rel="stylesheet" type="text/css" href="{% static 'books/details.css' %}">
+{% endblock  %}
+<form method="GET" action="{% url 'books:searched-page' %}">
+    {% csrf_token %}
+    <input type="search" name="q" placeholder="Search books">
+    <button type="submit">Search</button>
+</form>
+
+    {% block content %}
+        <div class="content-container">
+            <div class="content">
+                <h2>{{ book.title }}</h2>
+                <p><img src="{{ book.image.url }}" alt="{{ book.title }}" width ='150' height ='200'></p>
+                <p>
+                    Genres:
+                    {% for genre in book.genre.all %}
+                      {{ genre.name }}
+                      {% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                  </p>
+                  <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" name="add_to_shelf">Add to Shelf</button>
+                </form>
+                 <span> 
+                <p><a href="{{ book.book.url }}" download>Download Book</a></p>
+        
+                <!-- Any template with a link to view the file -->
+                <!-- <a href="{% url 'books:book-details' pk=book.pk %}">Read</a> -->
+                <h3>Book Description</h3>
+                <pre>{{ book.blurb }}</pre>
+            </div>
+            
+            <!-- Dummy Sidebar -->
+            <div class="sidebar">
+                <h3>Share a book today!!</h3>
+                <p>
+                    📚 Share the Magic of Reading! 🌟
+                    
+                    Dear LibraLux Community,
+                    
+                    We believe that each book is a journey waiting to be shared, an adventure waiting to be discovered. 🌈✨ That's why we invite you to contribute to our vibrant library by uploading books you love!
+                    
+                    Your unique collection could be the next favorite for someone else. Whether it's a gripping novel, an insightful guide, or a heartwarming tale, your books have the power to inspire, entertain, and connect.
+                    
+                    Let's build a community where the love for reading knows no bounds. 📖❤️ Join us in spreading the joy of literature. Upload your cherished books, and let's create a haven for book lovers around the world.
+                    
+                    Thank you for being a part of our literary journey!
+                    
+                    Happy reading and sharing! 📚🌟
+                    
+                </p>
+            </div>
+        </div>
+        <hr>
+    {% endblock %}
+    

@@ -1,0 +1,103 @@
+/* Reset some default styles for margin and padding */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f2f2f2; /* Light gray background */
+    color: #333; /* Dark text color */
+}
+
+
+form {
+    margin-top: 20px;
+    border-radius: 50px;
+}
+
+input[type="search"] {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+}
+
+button {
+    padding: 10px 12px;
+    background-color: #e43c5c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 19px;
+}
+button:hover{
+    background:#f11b42;
+}
+
+/* Main content container */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Main content area */
+.content {
+    flex: 1;
+    background: #fff; /* White background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Book title */
+.content h2 {
+    color: #e43c5c; /* Red color */
+}
+
+/* Book image */
+.content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Download link */
+.content a {
+    display: inline-block;
+    background: #e43c5c; 
+    color: #fff;
+    padding: 10px 12px; /* Adjust the padding to your preference */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    
+}
+
+.content a:hover{
+    background: #f11b42;
+}
+
+/* Book description */
+.content h3 {
+    color: #333; /* Dark text color */
+    margin-top: 0;
+}
+
+.content pre {
+    white-space: pre-wrap; /* Preserve newline characters and wrap text */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 300px;
+    background:#e43c5c; /* Red color */
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add additional styles as needed */

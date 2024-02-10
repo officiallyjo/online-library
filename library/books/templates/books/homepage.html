@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Shelf{% endblock %}
+
+
+{% block css_file %}
+<link rel="stylesheet" type="text/css" href="{% static 'books/homepage.css' %}">
+{% endblock  %}
+
+
+{% block content %}
+
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+  
+
+       <form method="GET" action="{% url 'books:searched-page' %}">
+        {% csrf_token %}
+       <input type="search" name="q" placeholder="Search books">
+       <button type="submit">Search</button>
+       </form>
+   
+       <h3>Welcome to <strong>LibraLux</strong></h3>
+       <h1>Your Gateway to an Open Online Library</h1>
+       <h2>Explore a World of Knowledge - Download Your Favorite Books for Free</h2>
+       
+      <a href="{% url 'accounts:register' %}" class="btn-get-started scrollto">Get Started</a>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <p>Welcome to LibraLux, where a passion for knowledge meets the digital age. At LibraLux, we believe in the power of open access to information and the joy of sharing ideas.</p>
+            <br>
+            <h2>Our Mission:</h2>
+            <p>LibraLux is on a mission to provide a platform for book enthusiasts, learners, and curious minds to freely explore and download a vast collection of books. We strive to break down barriers to access knowledge and promote a culture of continuous learning.</p>
+            <p>LibraLux stands out as an open online library dedicated to offering a diverse range of books across genres. Our commitment to free access fosters a community where individuals can engage with literature without limitations.</p>
+            <p>- Extensive Collection: Dive into a rich and varied collection of books spanning fiction, non-fiction, academic, and more.</p>
+            <p>- Free and Open: LibraLux believes in the freedom to explore, learn, and download without any cost barriers.</p>
+            <p>- Community-Centric: Join a community of book lovers who share a passion for knowledge and discovery.</p>
+            <p>Join us on this journey of exploration and education. LibraLux is not just a library; it's a gateway to a world of ideas waiting to be explored.</p>
+           <br>
+            <h3>Happy Reading!</h3>
+            
+           <a href="{% url 'accounts:register' %}" class="btn-get-started scrollto">Get Started</a>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    {% endblock %}

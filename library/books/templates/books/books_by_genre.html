@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- books_by_genre.html -->
+{% block css_file %}
+    <link rel="stylesheet" type="text/css" href="{% static 'books/display.css' %}">
+{% endblock  %}
+
+{% block content %}
+
+<form method="GET" action="{% url 'books:searched-page' %}" style="margin-top: 20px; border-radius: 50px;">
+
+    {% csrf_token %}
+    
+    <input type="search" name="q" placeholder="Search books" style="padding: 8px; width: 200px; border: 1px solid #ccc; border-radius: 50px;">
+
+    <button type="submit" style="padding: 8px 16px; background-color: #e43c5c; color: #fff; border: none; cursor: pointer; border-radius: 50px;">
+        Search
+    </button>
+
+</form>
+
+
+<h1>Books on {{ genre.name }}</h1>
+
+<section id="services" class="services">
+    <div class="container">
+
+      {% for book in books %}
+        <div class="row">     
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="icon-box">
+                    <div class="icon"><i class="bx bx-world"></i></div>
+                        
+                           <h4 class="title"> <a href="{% url 'books:book-details' pk=book.pk %}">
+                                <p><img src="{{book.image.url}}" width ='150' height ='200'></p>
+                                <h5 class="description">{{ book.title }}</h5>
+                            </a> 
+                            </h4>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    
+
+    </div>
+</section><!-- End Services Section -->
+
+{% endblock %}
+   

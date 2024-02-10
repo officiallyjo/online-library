@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Upload{% endblock %}
+
+{% block css_file %}
+    <link rel="stylesheet" type="text/css" href="{% static 'books/upload.css' %}">
+{% endblock  %}
+
+{% block content %}
+    <div class="center-content">
+        <div class="additional-content">
+            <h1>Upload a Book</h1>
+        </div>
+    </div>
+    <section id="contact" class="contact">
+    
+        <div class="form-container">
+            <div class="col-lg-8 mt-5 mt-lg-0">
+                <form method='POST' enctype ='multipart/form-data' class="register-form">
+                    <div class="row">
+            
+                        {% csrf_token %}
+                        <div class="col-md-6 form-group">
+                            {% for field in form %}
+                            <div>
+                                {{ field.label_tag }}
+                                {{ field }}
+                                {{ field.errors }}
+                            </div>
+                            {% endfor %}
+                            <div class="text-center"><button type ='submit'>Upload</button></div>
+                        </div>
+                    </div>
+                </form>
+              
+    
+            </div>
+    
+          
+    
+        </div>
+    </section>
+    
+{% endblock %}

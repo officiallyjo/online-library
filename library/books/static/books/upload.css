@@ -1,0 +1,132 @@
+/* Existing styles remain unchanged */
+
+/* Additional styles for centering the form and background gradient */
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+  /* Center the additional content vertically and horizontally */
+  .center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Styles for the additional content */
+  .additional-content {
+    text-align: center;
+  }
+  
+  .contact {
+    display: flex;
+    margin-top: -20px;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+  }
+  
+  .contact .form-container {
+    width: 100%;
+    max-width: 600px; /* Adjust the maximum width as needed */
+    background: rgba(255, 255, 255, 0.8); /* Adjust the background opacity as needed */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    
+  }
+  
+  
+  .contact .register-form{
+    width: 100%;
+    background: #fff;
+  }
+  
+  /* Rest of the existing styles remain unchanged */
+  
+  label {
+      color: black;
+      font-weight: bold;
+      display: inline-block;
+      width: 100px; /* Adjust the width as needed */
+      margin-right: 10px; /* Adjust the spacing between label and input */
+  }
+  
+  /* Apply styles to form fields */
+  input, select, textarea {
+      border: 1px solid black;
+      padding: 8px;
+      margin-bottom: 10px;
+  }
+  
+  .contact .register-form{
+    width: 100%;
+    background: #fff;
+  }
+  .contact .register-form input,
+  .contact .register-form textarea {
+      width: 60%; /* Make input and textarea cover the whole width */
+      border-radius: 5px;
+  }
+  
+  /* Apply styles to form errors */
+  .error {
+      color: #ff1493; /* Pink color */
+      font-style: italic;
+      
+  }
+    
+    .contact .register-form .form-group {
+      padding-bottom: 8px;
+    }
+    
+      
+    .contact .register-form input:focus,
+    .contact .register-form textarea:focus {
+      border-color: #e43c5c;
+    }
+    
+    .contact .register-form input {
+      height: 40px;
+    }
+    
+    .contact .register-form textarea {
+      padding: 10px 12px;
+    }
+    
+  
+  
+  
+  .contact .register-form button[type=submit] {
+    background: #e43c5c;
+    border: 0;
+    padding: 10px 28px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+    margin-top: 20px;
+  }
+  
+  .contact .register-form button[type=submit]:hover {
+    background: #dc163a;
+    /**  animation: animate-loading 1s linear infinite; **/
+  }
+  
+  .login-link {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+    
+    /**@keyframes animate-loading {
+      0% {
+        transform: rotate(0deg);
+      }
+    
+      100% {
+        transform: rotate(360deg);
+      }
+    }**/
+  
+  /* Add additional styles as needed */
+  
